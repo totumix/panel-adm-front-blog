@@ -26,7 +26,6 @@ export class AuthManager {
                 Storage.setAll(AUTH_DATA, data);
                 this._authEvent.changeLoginUser(authResponse);
             }),
-            switchMap(() => this._authService.getInfo(formValue.username)),
             shareReplay()
         )
     }

@@ -20,7 +20,7 @@ export class AuthService {
     }
 
     login(data): Observable<AuthResponse> {
-        return this._http.post<AuthResponse>(`${this.url}/${authentication.auth}/${authentication.authenticate}`, data)
+        return this._http.post<AuthResponse>(`${this.url}/${authentication.login}`, data)
     }
 
     getInfo(username: string): Observable<AuthResponse> {

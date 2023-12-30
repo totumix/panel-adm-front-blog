@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
   hmr: false,
-  gateway: 'https://armi-business-monitor-dot-armirene-369418.uc.r.appspot.com/monitor',
+  gateway: 'http://localhost:3800/api',
   countryName: '',
   indicator: '',
   isColombia: undefined,

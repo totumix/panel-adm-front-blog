@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
   hmr: true,
-  gateway: 'https://armi-business-monitor-dot-armirene-369418.uc.r.appspot.com/monitor',
+  gateway: 'http://localhost:3800/api',
   departments: 'https://www.datos.gov.co/resource/xdk5-pm3f.json',
   countryName: 'Colombia',
   indicator: 'COL',

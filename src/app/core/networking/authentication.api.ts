@@ -3,5 +3,6 @@ export const authentication = {
     authenticate: 'authenticate',
     info: 'info',
     user: 'user',
-    create: 'create'
+    create: 'create',
+    login : 'login'
 };

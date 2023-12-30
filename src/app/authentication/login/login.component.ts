@@ -30,9 +30,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this._fb.group({
-      username: [null, [Validators.required]],
+      email: [null, [Validators.required]],
       password: [null, [Validators.required]],
-      country: [environment.indicator, [Validators.required]]
+      gettoken: [true]
+      // country: [environment.indicator, [Validators.required]]
     });
   }
 
@@ -50,13 +51,6 @@ export class LoginComponent implements OnInit {
     this._vm.login(formValue)
       .pipe(
         finalize(() => this._loadingService.loadingOff()),
-        tap(user => {
-          this._vm.getStates();
-          Storage.setAll(USER_DATA, user);
-        }),
-        switchMap(user =>
-          user.businessIds ? this._vm.getBusinessById(user?.businessIds[0]) : of(null)
-        ),
         catchError(err => {
           let { error: { message } } = err;
           this._messagesService.showErrors(message);
@@ -64,12 +58,8 @@ export class LoginComponent implements OnInit {
         }),
       )
       .subscribe((business) => {
-        Storage.setAll(BUSINESS_DATA, business);
         if (business) {
-          this._vm.getBusinessList(Storage.getOne(USER_DATA)?.id);
-          this._router.navigateByUrl("/dashboard/business")
-        } else {
-          this._router.navigateByUrl("/authentication/business-form")
+          this._router.navigateByUrl("/dashboard/start-view")
         }
       });
 
