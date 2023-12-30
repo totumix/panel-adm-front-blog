@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/scss/var-mixins",
+"assets/scss/general";
+
+html,
+body {
+    background-color: #f8f8f8 !important;
+    font-size: 10px !important;
+}
+
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", sans-serif !important;
+}
+
+nz-form-label {
+    font-weight: bold;
+}
+
+input {
+    height: 5rem;
+}
+
+nz-select-top-control {
+    height: 5rem !important;
+    align-items: center;
+}
+
+.ant-drawer-body {
+    padding: 0 !important;
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+/* Estilos barra (thumb) de scroll */
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 0.2rem 0.1rem rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos track de scroll */
+::-webkit-scrollbar-track {
+    background: #e1e1e1;
+}
+
+::-webkit-scrollbar-track:hover,
+::-webkit-scrollbar-track:active {
+    background: #d4d4d4;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+input[type=number] { -moz-appearance:textfield; }
