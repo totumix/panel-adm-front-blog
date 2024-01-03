@@ -31,9 +31,9 @@ export class BaseService {
       // 'correoUsuario': this.getLocalUser().email,
       // 'employeeNumber':  this.getLocalUser().employeeNumber,
       'Accept': 'application/json',
-      'Authorization': `Bearer ${Storage.getAll(AUTH_DATA)?.token}`,
+      'Authorization': `${Storage.getAll(AUTH_DATA)?.token}`,
       'Content-Type': 'application/json',
-      'COUNTRY': environment.indicator
+      // 'COUNTRY': environment.indicator
     };
     // if(this.orderActive != null) data['orderId'] = this.orderActive?.orderId?.toString();
     return { headers: new HttpHeaders(data) };

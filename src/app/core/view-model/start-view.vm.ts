@@ -7,12 +7,12 @@ import { BranchOfficeManager } from "../manager/branch-office.manager";
 export class StartViewVm {
 
     constructor(
-        private _branchOfficeManager: BranchOfficeManager
+        // private _branchOfficeManager: BranchOfficeManager
     ) {
     }
 
-    returnBranchOfficeByBusiness() {
-        return this._branchOfficeManager.returnBranchOfficeByBusiness()
-    }
+    // returnBranchOfficeByBusiness() {
+    //     return this._branchOfficeManager.returnBranchOfficeByBusiness()
+    // }
 
 }

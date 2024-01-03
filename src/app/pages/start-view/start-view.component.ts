@@ -4,6 +4,8 @@ import { BranchOfficeFormComponent } from '../../shared/components/branch-office
 import { BranchOffice } from 'src/app/core/models/branch-office.class';
 import { StartViewVm } from 'src/app/core/view-model/start-view.vm';
 import { Observable } from 'rxjs';
+import { Article } from 'src/app/core/models/Article.class';
+import { ArticleFormComponent } from 'src/app/shared/components/article-form/article-form.component';
 
 @Component({
   selector: 'app-start-view',
@@ -11,7 +13,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./start-view.component.scss']
 })
 export class StartViewComponent implements OnInit {
-  listOfData$: Observable<BranchOffice[]>
+  listOfData$: Observable<Article[]>
 
   constructor(
     private _drawerEvent: DrawerEvent,
@@ -19,18 +21,19 @@ export class StartViewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.init();
+    // this.init();
   }
 
   init() {
-    this.getBranchOfficeByBusiness();
+    // this.getBranchOfficeByBusiness();
   }
 
   createBranchOffice() {
-    this._drawerEvent.changeOpenComponent({ component: BranchOfficeFormComponent, data: new BranchOffice })
+    console.log("entra aqui")
+    this._drawerEvent.changeOpenComponent({ component: ArticleFormComponent, data: new Article })
   }
 
-  getBranchOfficeByBusiness() {
-    this.listOfData$ = this._vm.returnBranchOfficeByBusiness()
-  }
+  // getBranchOfficeByBusiness() {
+  //   this.listOfData$ = this._vm.returnBranchOfficeByBusiness()
+  // }
 }

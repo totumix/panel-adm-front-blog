@@ -1,0 +1,39 @@
+<form [formGroup]="form" class="pdd-20" nz-form nzLayout="vertical">
+    <nz-form-item>
+        <nz-form-label>Nombre del articulo <span id="required">*</span></nz-form-label>
+        <nz-form-control nzErrorTip="Por favor ingrese el nombre del articulo">
+            <input formControlName="name" type="name" nz-input placeholder="Nombre">
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label class="mg-y-5">Categoria<span id="required">*</span> </nz-form-label>
+        <nz-form-control>
+            <nz-select formControlName="category" nzPlaceHolder="Selecciona la categoria">
+                <ng-container *ngFor="let category of categoryList$ | async ">
+                    <nz-option [nzValue]="category._id" nzLabel="{{category.name}}"></nz-option>
+                </ng-container>
+            </nz-select>
+        </nz-form-control>
+        <div class="pdd-top-10" id="required" *ngIf="form.controls['category'].hasError('min')">
+            Por favor ingresa la sucursal!
+        </div>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label>Descripción</nz-form-label>
+        <nz-form-control nzErrorTip="Por favor ingresa la Descripción">
+            <textarea maxlength="140" formControlName="description" nz-input placeholder="Escribe la descripción aquí…"
+                [nzAutosize]="{ minRows: 5, maxRows: 5 }"></textarea>
+        </nz-form-control>
+    </nz-form-item>
+    <app-img-upload (emitFileUrl)="getUrlFile($event)" [parentForm]="form.value"></app-img-upload>
+    <span><span id="required">*</span>Campos obligatorios</span>
+</form>
+<div class="actions-container">
+    <a *ngIf="dataForm._id" (click)="deleteBranchOffice()">Eliminar sucursal</a>
+    <app-button [title]="'Atrás'" (click)="closeDrawer()"
+        [customClasses]="'negative-main-btn negative-main-btn--form main--h-40  font-16'"></app-button>
+    <app-button (click)="saveBranchOffice()" [title]="'Crear'" *ngIf="!dataForm._id"
+        [customClasses]="'main main--form main--h-40  font-16'" [isLoading]="false"></app-button>
+    <app-button (click)="updateBranchOffice(dataForm)" [title]="'Editar'" *ngIf="dataForm._id"
+        [customClasses]="'main main--form main--h-40  font-16'" [isLoading]="false"></app-button>
+</div>
