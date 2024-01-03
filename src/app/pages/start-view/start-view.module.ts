@@ -7,6 +7,7 @@ import { ButtonModule } from 'src/app/shared/components/button/button.module';
 import { BranchOfficeFormComponent } from '../../shared/components/branch-office-form/branch-office-form.component';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { MessagesComponent } from 'src/app/shared/components/messages/messages.component';
+import { ArticleCardComponent } from 'src/app/shared/components/article-card/article-card.component';
 
 const antdModule = [
   NzModalModule
@@ -21,6 +22,7 @@ const antdModule = [
     BranchOfficeFormComponent,
     StartViewRoutingModule,
     BranchOfficeCardModule,
+    ArticleCardComponent,
     ButtonModule,
     MessagesComponent,
     ...antdModule

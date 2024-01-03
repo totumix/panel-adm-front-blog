@@ -1,0 +1,9 @@
+<div class="article-card" [ngStyle]="{'background-color': color}">
+    <img class="article-card__img" src="{{article.image | noimage}}" alt="">
+    <div class="article-card__description">
+        <span class="article-card__description__icon" nz-icon nzType="edit" nzTheme="outline"
+            (click)="editBranchOffice(article)"></span>
+        <span class="article-card__description__title">{{article.name}}</span>
+        <p class="article-card__description__paragraph">{{article.name}}</p>
+    </div>
+</div>

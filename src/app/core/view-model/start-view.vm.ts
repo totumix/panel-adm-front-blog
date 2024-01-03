@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { BranchOfficeManager } from "../manager/branch-office.manager";
+import { ArticleManager } from "../manager/article.manager";
 
 @Injectable({
     providedIn: 'root'
@@ -7,12 +7,12 @@ import { BranchOfficeManager } from "../manager/branch-office.manager";
 export class StartViewVm {
 
     constructor(
-        // private _branchOfficeManager: BranchOfficeManager
+        private _articleManager: ArticleManager
     ) {
     }
 
-    // returnBranchOfficeByBusiness() {
-    //     return this._branchOfficeManager.returnBranchOfficeByBusiness()
-    // }
+    returnArticles() {
+        return this._articleManager.returnArticles()
+    }
 
 }

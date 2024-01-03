@@ -15,7 +15,6 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { Category } from 'src/app/core/models/Category.class';
 import { Observable } from 'rxjs';
 import { ArticleFormVm } from 'src/app/core/view-model/article-form.vm';
-import { AUTH_DATA, Storage } from 'src/app/core/storage';
 
 const MODULES = [
   ButtonModule,
@@ -81,10 +80,9 @@ export class ArticleFormComponent {
     this._drawerEvent.changeCloseComponent(true)
   }
 
-  saveBranchOffice() {
-    console.log(this.form.value)
+  saveArticle() {
     if (!this.form.invalid) {
-      console.log(this.form.value)
+      this._vm.saveArticle(this.form.value).subscribe(res => this.closeDrawer())
     } else {
       this.showFormError();
     }
@@ -96,6 +94,18 @@ export class ArticleFormComponent {
         control.updateValueAndValidity({ onlySelf: true });
       }
     });
+  }
+
+  deleteArticle(articleId) {
+    this._vm.deleteArticle(articleId).subscribe(() => this.closeDrawer())
+  }
+
+  updateArticle(data) {
+    const body = {
+      ...data,
+      ...this.form.value
+    }
+    this._vm.updateArticle(body).subscribe(res => this.closeDrawer())
   }
 
 }

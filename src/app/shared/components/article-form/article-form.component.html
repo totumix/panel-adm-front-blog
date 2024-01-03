@@ -15,7 +15,7 @@
             </nz-select>
         </nz-form-control>
         <div class="pdd-top-10" id="required" *ngIf="form.controls['category'].hasError('min')">
-            Por favor ingresa la sucursal!
+            Por favor ingresa la categoría!
         </div>
     </nz-form-item>
     <nz-form-item>
@@ -29,11 +29,11 @@
     <span><span id="required">*</span>Campos obligatorios</span>
 </form>
 <div class="actions-container">
-    <a *ngIf="dataForm._id" (click)="deleteBranchOffice()">Eliminar sucursal</a>
+    <a *ngIf="dataForm._id" (click)="deleteArticle(dataForm._id)">Eliminar articulo</a>
     <app-button [title]="'Atrás'" (click)="closeDrawer()"
         [customClasses]="'negative-main-btn negative-main-btn--form main--h-40  font-16'"></app-button>
-    <app-button (click)="saveBranchOffice()" [title]="'Crear'" *ngIf="!dataForm._id"
+    <app-button (click)="saveArticle()" [title]="'Crear'" *ngIf="!dataForm._id"
         [customClasses]="'main main--form main--h-40  font-16'" [isLoading]="false"></app-button>
-    <app-button (click)="updateBranchOffice(dataForm)" [title]="'Editar'" *ngIf="dataForm._id"
+    <app-button (click)="updateArticle(dataForm)" [title]="'Editar'" *ngIf="dataForm._id"
         [customClasses]="'main main--form main--h-40  font-16'" [isLoading]="false"></app-button>
 </div>

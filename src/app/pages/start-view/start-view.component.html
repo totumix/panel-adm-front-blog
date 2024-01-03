@@ -19,8 +19,8 @@
         No hay articulos para mostrar
     </div>
     <div class="row mg-y-30">
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" *ngFor="let branchOffice of listOfData$ | async ">
-            <app-branch-office-card [branchOffice]="branchOffice"></app-branch-office-card>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" *ngFor="let article of listOfData$ | async ">
+            <app-article-card [article]="article"></app-article-card>
         </div>
     </div>
 </div>

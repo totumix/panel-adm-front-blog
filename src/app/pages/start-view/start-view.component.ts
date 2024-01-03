@@ -21,11 +21,11 @@ export class StartViewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.init();
+    this.init();
   }
 
   init() {
-    // this.getBranchOfficeByBusiness();
+    this.getBranchOfficeByBusiness();
   }
 
   createBranchOffice() {
@@ -33,7 +33,7 @@ export class StartViewComponent implements OnInit {
     this._drawerEvent.changeOpenComponent({ component: ArticleFormComponent, data: new Article })
   }
 
-  // getBranchOfficeByBusiness() {
-  //   this.listOfData$ = this._vm.returnBranchOfficeByBusiness()
-  // }
+  getBranchOfficeByBusiness() {
+    this.listOfData$ = this._vm.returnArticles()
+  }
 }
