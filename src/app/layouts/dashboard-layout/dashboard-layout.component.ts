@@ -19,6 +19,7 @@ export class DashboardLayoutComponent implements OnInit, OnDestroy {
   business$: Observable<Business>
   menuOptions = [
     { label: 'Inicio', icon: 'home', route: ['start-view'] },
+    { label: 'Posts', icon: 'file-done', route: ['posts'] },
     { label: 'Pedidos', icon: 'file-done', route: ['orders'] },
     { label: 'Clientes', icon: 'user', route: ['clients'] },
     { label: 'Manejo de ordenes', icon: 'file-done', route: ['orders-manager'] },

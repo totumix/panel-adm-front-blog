@@ -12,6 +12,10 @@ export const DashboardLayout_ROUTES: Routes = [
                 loadChildren: () => import('../../pages/start-view/start-view.module').then(m => m.StartViewModule)
             },
             {
+                path: 'posts',
+                loadChildren: () => import('../../pages/posts/posts.module').then(m => m.PostsModule)
+            },
+            {
                 path: 'business',
                 loadChildren: () => import('../../pages/business/business.module').then(m => m.BusinessModule)
             },
