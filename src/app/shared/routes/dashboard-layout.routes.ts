@@ -39,6 +39,10 @@ export const DashboardLayout_ROUTES: Routes = [
                 path: 'setting',
                 loadChildren: () => import('../../pages/setting/setting.module').then(m => m.SettingModule)
             },
+            {
+                path: 'users',
+                loadChildren: () => import('../../pages/users/users.module').then(m => m.UsersModule)
+            },
         ]
     }
 

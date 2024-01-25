@@ -24,6 +24,7 @@ export class DashboardLayoutComponent implements OnInit, OnDestroy {
     { label: 'Clientes', icon: 'user', route: ['clients'] },
     { label: 'Manejo de ordenes', icon: 'file-done', route: ['orders-manager'] },
     { label: 'Mensajeros', icon: 'mail', route: ['messengers'] },
+    { label: 'Usuarios', icon: 'mail', route: ['users'] },
   ]
   closeDrawerSubscription: Subscription;
   openDrawerSubscription: Subscription;
