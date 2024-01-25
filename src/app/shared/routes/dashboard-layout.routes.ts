@@ -16,6 +16,10 @@ export const DashboardLayout_ROUTES: Routes = [
                 loadChildren: () => import('../../pages/posts/posts.module').then(m => m.PostsModule)
             },
             {
+                path: 'categories',
+                loadChildren: () => import('../../pages/categories/categories.module').then(m => m.CategoriesModule)
+            },
+            {
                 path: 'business',
                 loadChildren: () => import('../../pages/business/business.module').then(m => m.BusinessModule)
             },

@@ -20,6 +20,7 @@ export class DashboardLayoutComponent implements OnInit, OnDestroy {
   menuOptions = [
     { label: 'Inicio', icon: 'home', route: ['start-view'] },
     { label: 'Posts', icon: 'file-done', route: ['posts'] },
+    { label: 'Categorias', icon: 'file-done', route: ['categories'] },
     { label: 'Pedidos', icon: 'file-done', route: ['orders'] },
     { label: 'Clientes', icon: 'user', route: ['clients'] },
     { label: 'Manejo de ordenes', icon: 'file-done', route: ['orders-manager'] },
