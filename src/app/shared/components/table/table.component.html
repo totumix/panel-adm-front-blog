@@ -1,6 +1,7 @@
-<nz-table #sortTable [nzData]="listOfData" nzTableLayout="fixed">
-    <ng-container *ngIf="isMediumScreenWidth; else isLarge ">
-        <div class="order-card" *ngFor="let data of sortTable.data">
+<nz-table [nzShowPagination]="false" [nzData]="listOfData | async">
+    <ng-container *ngIf="isLargeScreenWidth; else isLarge ">
+        <div class="order-card"
+            *ngFor="let data of (listOfData | async) | paginate: { itemsPerPage: 10, currentPage: p }">
             <div *ngFor="let column of listOfColumn">
                 <strong>{{ column.title }} : </strong>
                 {{ data[column.name] }}
@@ -15,7 +16,7 @@
         </div>
     </ng-container>
 </nz-table>
-<ng-template #isLarge #sortTable>
+<ng-template #isLarge>
     <thead>
         <tr>
             <th *ngFor="let column of listOfColumn">
@@ -25,9 +26,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let data of sortTable.data">
-            <td *ngFor="let object of objectKeys">
-                {{ object === 'createDate' ? (data[object] | date:'medium') : data[object] }}
+        <tr *ngFor="let data of (listOfData | async) | paginate: { itemsPerPage: 10, currentPage: p }">
+            <td *ngFor="let object of objectKeys" title="{{data[object]}}">
+                {{ data[object] }}
             </td>
             <td>
                 <div class="justify-content-space-around">
@@ -41,3 +42,6 @@
         </tr>
     </tbody>
 </ng-template>
+<div class="mg-y-10 justify-content-center">
+    <pagination-controls previousLabel="" nextLabel="" (pageChange)="p = $event"></pagination-controls>
+</div>

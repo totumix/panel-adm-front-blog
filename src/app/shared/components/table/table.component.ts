@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { MEDIUM } from 'src/app/core/break-points';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs';
+import { LARGE, MEDIUM } from 'src/app/core/break-points';
 import { ScreenWidth } from 'src/app/core/events/screen-width.event';
 
 @Component({
@@ -8,8 +9,8 @@ import { ScreenWidth } from 'src/app/core/events/screen-width.event';
   styleUrls: ['./table.component.scss'],
 })
 export class TableComponent implements OnInit {
-
-  @Input() listOfData: any[] = [];
+  p: number = 1;
+  @Input() listOfData: Observable<any>;
   @Input() listOfColumn: any[] = [];
   @Input() objectKeys: any;
   @Input() isEditable: boolean = false;
@@ -17,7 +18,7 @@ export class TableComponent implements OnInit {
   @Input() isCancelable: boolean = false;
   @Input() isShowItem: boolean = false;
   @Output() sendItem = new EventEmitter();
-  isMediumScreenWidth: boolean;
+  isLargeScreenWidth: boolean;
   actions
   constructor(
     private _screenWidth: ScreenWidth,
@@ -42,10 +43,10 @@ export class TableComponent implements OnInit {
 
   setScreenWidth() {
     this._screenWidth.width$.subscribe((width) => {
-      if (width < MEDIUM) {
-        this.isMediumScreenWidth = true;
+      if (width < LARGE) {
+        this.isLargeScreenWidth = true;
       } else {
-        this.isMediumScreenWidth = false;
+        this.isLargeScreenWidth = false;
       }
     });
   }

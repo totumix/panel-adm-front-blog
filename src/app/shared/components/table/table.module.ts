@@ -4,7 +4,7 @@ import { TableComponent } from './table.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     TableComponent
@@ -13,7 +13,8 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
     CommonModule,
     NzTableModule,
     NzIconModule,
-    NzToolTipModule
+    NzToolTipModule,
+    NgxPaginationModule
   ],
   exports:[
     TableComponent
