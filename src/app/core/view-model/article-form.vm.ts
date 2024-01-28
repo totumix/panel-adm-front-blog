@@ -15,9 +15,7 @@ export class ArticleFormVm {
     ) { }
 
     getCategories() {
-        return this._categoriesManager.getCategories().pipe(
-            map(res => res['categories'])
-        );
+        return this._categoriesManager.returnCategories()
     }
 
     saveArticle(data: Article) {

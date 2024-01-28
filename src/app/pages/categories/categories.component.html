@@ -4,6 +4,8 @@
             <span class=" font-30">
                 Categorías
             </span>
+            <app-button [title]="'Crear categoría'" [customClasses]="'second-btn mg-x-15'" [isLoading]="false"
+                [subfixIcon]="'plus'" (click)="showModalCategory()"></app-button>
         </div>
     </div>
     <div class="row mg-y-20">
@@ -15,7 +17,9 @@
     </div>
     <div class="row mg-y-30">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
+            <app-table [isEditable]="true" [isErasable]="true" [objectKeys]="categoryModelList"
+                [listOfColumn]="listOfColumn" [listOfData]="listOfData$"
+                (sendItem)="getTableActions($event)"></app-table>
         </div>
     </div>
 </div>

@@ -1,0 +1,17 @@
+<form [formGroup]="categoryForm" nz-form nzLayout="vertical">
+    <nz-form-item>
+        <nz-form-label>Nombre <span id="required">*</span></nz-form-label>
+        <nz-form-control nzErrorTip="Por favor ingresa el nombre de la categiría!">
+            <input formControlName="name" type="name" nz-input placeholder="Nombre">
+        </nz-form-control>
+    </nz-form-item>
+    <span><span id="required">*</span>Campos obligatorios</span>
+</form>
+<div style="display: flex; justify-content: right; gap: 5px; margin: 20px 0 0 0;">
+    <app-button [title]="'Atrás'" (click)="destroyModal()"
+        [customClasses]="'negative-main-btn negative-main-btn--form main--h-40  font-16'"></app-button>
+    <app-button [title]="'Crear'" (click)="saveCategory()" [customClasses]="'main main--form main--h-40  font-16'"
+        *ngIf="!nzModalData" [isLoading]="false"></app-button>
+    <app-button *ngIf="nzModalData" (click)="saveCategory()" [title]="'Editar'"
+        [customClasses]="'main main--form main--h-40  font-16'" [isLoading]="false"></app-button>
+</div>
