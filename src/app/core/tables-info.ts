@@ -91,3 +91,14 @@ export const ORDER_TABLE = {
         // },
     ]
 }
+
+export const CATEGORIES_TABLE = {
+    columns: [
+        {
+            title: 'Nombre',
+            compare: (a: any, b: any) => a.orderId.localeCompare(b.orderId),
+            priority: false,
+            name: 'name'
+        }
+    ]
+}
