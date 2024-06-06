@@ -34,9 +34,9 @@
         </li>
       </ul>
     </nz-dropdown-menu>
-    <div class="nz-header__progress-bar" *ngIf="_loadingService.loading$ | async">
+    <!-- <div class="nz-header__progress-bar" *ngIf="_loadingService.loading$ | async">
       <nz-progress [nzShowInfo]="false" [nzPercent]="100" nzStatus="active"></nz-progress>
-    </div>
+    </div> -->
   </nz-header>
   <nz-layout class="layout-content">
     <nz-sider *ngIf="showDrawerRef" class="menu-sidebar" nzCollapsible nzWidth="250px" nzBreakpoint="xl"

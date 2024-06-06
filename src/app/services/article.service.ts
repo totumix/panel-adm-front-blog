@@ -24,18 +24,18 @@ export class ArticleService {
     }
 
     saveArticle(body: Article): Observable<Article> {
-        return this._baseService.post(`${this.url}/${article.article}`, body).pipe(
+        return this._baseService.post(`${this.url}/${article.articles}`, body).pipe(
             map(res => res['data'])
         )
     }
 
     updateArticle(articleId: string, changes: Partial<Article>): Observable<any> {
-        return this._baseService.put(`${this.url}/${article.article}/${articleId}`, changes).pipe(
+        return this._baseService.patch(`${this.url}/${article.articles}/${articleId}`, changes).pipe(
             map(res => res['data'])
         )
     }
 
     deleteArticle(articleId) {
-        return this._baseService.delete(`${this.url}/${article.article}/${articleId}`)
+        return this._baseService.delete(`${this.url}/${article.articles}/${articleId}`)
     }
 }

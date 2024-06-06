@@ -1,11 +1,11 @@
 <form [formGroup]="form" class="pdd-20" nz-form nzLayout="vertical">
     <nz-form-item>
-        <nz-form-label>Nombre del articulo <span id="required">*</span></nz-form-label>
+        <nz-form-label>Título <span id="required">*</span></nz-form-label>
         <nz-form-control nzErrorTip="Por favor ingrese el nombre del articulo">
-            <input formControlName="name" type="name" nz-input placeholder="Nombre">
+            <input formControlName="title" type="title" nz-input placeholder="Nombre">
         </nz-form-control>
     </nz-form-item>
-    <nz-form-item>
+    <!-- <nz-form-item>
         <nz-form-label class="mg-y-5">Categoria<span id="required">*</span> </nz-form-label>
         <nz-form-control>
             <nz-select formControlName="category" nzPlaceHolder="Selecciona la categoria">
@@ -14,18 +14,18 @@
                 </ng-container>
             </nz-select>
         </nz-form-control>
-        <div class="pdd-top-10" id="required" *ngIf="form.controls['category'].hasError('min')">
+         <div class="pdd-top-10" id="required" *ngIf="form.controls['category'].hasError('min')">
             Por favor ingresa la categoría!
-        </div>
-    </nz-form-item>
+        </div> 
+    </nz-form-item> -->
     <nz-form-item>
-        <nz-form-label>Descripción</nz-form-label>
+        <nz-form-label>Contenido</nz-form-label>
         <nz-form-control nzErrorTip="Por favor ingresa la Descripción">
-            <textarea maxlength="140" formControlName="description" nz-input placeholder="Escribe la descripción aquí…"
+            <textarea maxlength="140" formControlName="content" nz-input placeholder="Escribe la descripción aquí…"
                 [nzAutosize]="{ minRows: 5, maxRows: 5 }"></textarea>
         </nz-form-control>
     </nz-form-item>
-    <app-img-upload (emitFileUrl)="getUrlFile($event)" [parentForm]="form.value"></app-img-upload>
+    <app-img-upload (emitImages)="getImages($event)" [parentForm]="form.value"></app-img-upload>
     <span><span id="required">*</span>Campos obligatorios</span>
 </form>
 <div class="actions-container">

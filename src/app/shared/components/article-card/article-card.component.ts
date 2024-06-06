@@ -32,7 +32,6 @@ export class ArticleCardComponent implements OnInit {
   }
 
   editBranchOffice(article: Article) {
-    console.log(article)
     this.drawerEvent.changeOpenComponent({ component: ArticleFormComponent, data: article })
   }
 

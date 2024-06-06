@@ -25,15 +25,14 @@ export class StartViewComponent implements OnInit {
   }
 
   init() {
-    this.getBranchOfficeByBusiness();
+    this.getArticles();
   }
 
   createBranchOffice() {
-    console.log("entra aqui")
     this._drawerEvent.changeOpenComponent({ component: ArticleFormComponent, data: new Article })
   }
 
-  getBranchOfficeByBusiness() {
+  getArticles() {
     this.listOfData$ = this._vm.returnArticles()
   }
 }

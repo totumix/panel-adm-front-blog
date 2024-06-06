@@ -29,7 +29,7 @@ export class ArticleManager {
                 this._messages.showErrors(message);
                 return throwError(() => err);
             }),
-            map(res => res['articles']),
+            map(res => res),
             tap(articles => this.subject.next(articles)),
             shareReplay()
         );

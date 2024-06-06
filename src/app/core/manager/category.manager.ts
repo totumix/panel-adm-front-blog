@@ -18,7 +18,7 @@ export class CategoryManager {
         private _messages: MessagesService,
         private _loading: LoadingService
     ) {
-        this.getCategories();
+        // this.getCategories();
     }
 
 

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ButtonModule } from '../button/button.module';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NzFormModule } from 'ng-zorro-antd/form';
@@ -35,7 +35,7 @@ const MODULES = [
   providers: [NzModalService, BaseFormArticleService],
   imports: [...MODULES]
 })
-export class ArticleFormComponent {
+export class ArticleFormComponent implements OnInit{
 
   @Input() form: FormGroup;
   @Input() dataForm: Article;
@@ -55,7 +55,7 @@ export class ArticleFormComponent {
 
   init() {
     this.initForm();
-    this.getCategories();
+    // this.getCategories();
   }
 
   getCategories() {
@@ -72,8 +72,8 @@ export class ArticleFormComponent {
     }
   }
 
-  getUrlFile(url) {
-    this.form.get('image')?.setValue(url);
+  getImages(images) {
+    this.form.get('images')?.setValue(images);
   }
 
   closeDrawer() {

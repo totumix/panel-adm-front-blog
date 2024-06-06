@@ -8,8 +8,11 @@
         border: 2px dashed #dfdfdf;
         border-radius: 5px;
         padding: 20px;
-        text-align: center;
         cursor: pointer;
+        gap: 0.5rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
     }
 
     &__span {
@@ -19,12 +22,31 @@
         font-weight: bold;
         border-radius: 5px
     }
+
     &__preview {
-        margin-top: 20px;
-        flex-direction: column;
+        margin-top: 2rem;
+        flex-direction: row;
         display: flex;
         align-items: center;
         gap: 2.5rem;
+        overflow: auto;
+        min-height: 20rem;
+
+        img {
+            max-height: 25rem;
+            max-width: 10rem;
+        }
+
+        &__close {
+            background-color: red;
+            border-radius: 50%;
+            width: 3rem;
+            position: absolute;
+            right: -1.4rem;
+            top: -1rem;
+            z-index: 10;
+            color: white
+        }
     }
 }
 
